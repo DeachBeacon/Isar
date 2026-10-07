@@ -1,0 +1,17 @@
+# Vivado 项目文件与日志
+*.xpr
+
+# Vivado 生成的目录
+.runs/
+.sim/
+
+# 比特流与报告
+*.bit
+*.bin
+
+# 临时仿真文件
+*.tmp
+
+# 编辑器
+.vscode/
+.idea/
