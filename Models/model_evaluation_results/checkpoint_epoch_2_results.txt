@@ -1,0 +1,38 @@
+模型: checkpoint_epoch_2.pth
+数据集: C:\transformerFPGA\MobileViT\Dataset\Driver\test1_p
+类别数: 10
+类别名: ['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9']
+检查点配置: {'num_classes': 10, 'class_names': ['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9'], 'width_multiplier': 0.75, 'activation': 'relu', 'resize': None, 'data_dir': 'C:\\transformerFPGA\\MobileViT\\Dataset\\Driver\\train_p', 'val_split': 0.2, 'seed': 42, 'batch_size': 16, 'epochs_total': 30, 'ema_enabled': True, 'ema_momentum': 0.003, 'label_smoothing': 0.12, 'mixup': {'enable': True, 'alpha': 0.2, 'prob': 0.01}, 'cutmix': {'enable': True, 'alpha': 1.0, 'prob': 0.05}, 't_max_config': 33660, 'warmup_steps_config': 3366, 'pretrained_weights': 'mobilevitv2-0.75.pt', 'torch_version': '2.9.1+cu130'}
+总体准确率: 73.00%
+平均类别准确率: 73.05%
+损失: 0.8872
+
+各类别准确率:
+  c0: 69.70% (23/33)
+  c1: 80.00% (24/30)
+  c2: 67.74% (21/31)
+  c3: 87.10% (27/31)
+  c4: 41.94% (13/31)
+  c5: 70.00% (21/30)
+  c6: 87.10% (27/31)
+  c7: 88.89% (24/27)
+  c8: 51.85% (14/27)
+  c9: 86.21% (25/29)
+
+分类报告:
+              precision    recall  f1-score   support
+
+          c0     0.6765    0.6970    0.6866        33
+          c1     0.9231    0.8000    0.8571        30
+          c2     0.7778    0.6774    0.7241        31
+          c3     1.0000    0.8710    0.9310        31
+          c4     1.0000    0.4194    0.5909        31
+          c5     0.7500    0.7000    0.7241        30
+          c6     0.6585    0.8710    0.7500        31
+          c7     0.4615    0.8889    0.6076        27
+          c8     0.6364    0.5185    0.5714        27
+          c9     0.8333    0.8621    0.8475        29
+
+    accuracy                         0.7300       300
+   macro avg     0.7717    0.7305    0.7290       300
+weighted avg     0.7762    0.7300    0.7313       300

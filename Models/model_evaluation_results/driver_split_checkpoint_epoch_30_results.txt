@@ -1,0 +1,38 @@
+模型: driver_split_checkpoint_epoch_30.pth
+数据集: C:\transformerFPGA\MobileViT\Dataset\Driver\test1_p
+类别数: 10
+类别名: ['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9']
+检查点配置: {'num_classes': 10, 'class_names': ['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9'], 'width_multiplier': 0.75, 'activation': 'relu', 'resize': None, 'data_dir': 'C:\\transformerFPGA\\MobileViT\\Dataset\\Driver\\train_p', 'val_split': 0.2, 'data_split': {'method': 'driver_disjoint_v1', 'driver_csv': 'C:\\transformerFPGA\\MobileViT\\Dataset\\Driver\\driver_imgs_list.csv', 'seed': 42, 'target_val_fraction': 0.2, 'actual_val_fraction': 0.2000089190153407, 'train_subjects': ['p002', 'p012', 'p014', 'p015', 'p016', 'p021', 'p022', 'p026', 'p035', 'p039', 'p042', 'p047', 'p049', 'p051', 'p052', 'p061', 'p064', 'p066', 'p075', 'p081'], 'val_subjects': ['p024', 'p041', 'p045', 'p050', 'p056', 'p072'], 'dataset_manifest_sha256': '92cc20f39c82162795b7f382e3c4958ca0d8471175bd696fb6adcf1f21fe2e0a'}, 'seed': 42, 'batch_size': 16, 'epochs_total': 30, 'ema_enabled': True, 'ema_momentum': 0.003, 'label_smoothing': 0.12, 'mixup': {'enable': True, 'alpha': 0.2, 'prob': 0.01}, 'cutmix': {'enable': True, 'alpha': 1.0, 'prob': 0.05}, 't_max_config': 33660, 'warmup_steps_config': 3366, 'pretrained_weights': 'mobilevitv2-0.75.pt', 'torch_version': '2.9.1+cu130'}
+总体准确率: 83.67%
+平均类别准确率: 83.91%
+损失: 0.5674
+
+各类别准确率:
+  c0: 66.67% (22/33)
+  c1: 90.00% (27/30)
+  c2: 83.87% (26/31)
+  c3: 100.00% (31/31)
+  c4: 80.65% (25/31)
+  c5: 90.00% (27/30)
+  c6: 80.65% (25/31)
+  c7: 96.30% (26/27)
+  c8: 88.89% (24/27)
+  c9: 62.07% (18/29)
+
+分类报告:
+              precision    recall  f1-score   support
+
+          c0     0.8462    0.6667    0.7458        33
+          c1     0.9000    0.9000    0.9000        30
+          c2     0.9630    0.8387    0.8966        31
+          c3     0.9688    1.0000    0.9841        31
+          c4     1.0000    0.8065    0.8929        31
+          c5     0.8710    0.9000    0.8852        30
+          c6     0.9259    0.8065    0.8621        31
+          c7     0.6667    0.9630    0.7879        27
+          c8     0.5581    0.8889    0.6857        27
+          c9     0.9000    0.6207    0.7347        29
+
+    accuracy                         0.8367       300
+   macro avg     0.8600    0.8391    0.8375       300
+weighted avg     0.8660    0.8367    0.8399       300

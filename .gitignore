@@ -12,6 +12,17 @@
 # 临时仿真文件
 *.tmp
 
+# 未完成训练的权重文件
+*.pth
+.model_evaluation_results/
+
 # 编辑器
 .vscode/
 .idea/
+
+# Agent
+.dsh_tmp/
+.acl-recovery/
+
+# 备份文件
+*.bak
