@@ -26,7 +26,7 @@ sim/xsim.log
 sim/webtalk*.jou
 sim/webtalk*.log
 sim/*.pb
-sim/data/
+# sim/data/ 现已入库跟踪
 
 # 日志与临时文件
 *.jou
@@ -40,6 +40,7 @@ sim/data/
 *.rar
 *.pdf
 
+<<<<<<< HEAD
 # 未完成训练的权重文件
 *.pth
 .model_evaluation_results/
@@ -59,3 +60,19 @@ refs/
 
 # 备份文件
 *.bak
+=======
+# vivado project / build artifacts
+vivado/
+build/tmp_led/
+board/led_blink/*.bit
+board/led_blink/*.rpt
+refs/
+
+# vivado project / build artifacts
+vivado/
+build/tmp_led/
+board/led_blink/*.bit
+board/led_blink/*.rpt
+refs/
+# sim/data/ 现已入库跟踪
+>>>>>>> 59d75bd (feat(w1+w2): DW conv engine, LED bitstream, platform/PS/quantize deliverables)

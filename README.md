@@ -40,20 +40,32 @@
 - Python 3.8+（生成黄金参考数据，无需额外依赖）
 - Windows + Git Bash（Vivado 路径可用环境变量 `VIVADO_BIN` 覆盖）
 
-### 运行 PW 卷积引擎仿真
+### 运行仿真（PW + DW 卷积引擎）
 
 ```bash
-# 1. 生成随机配置 + 激励 + 黄金输出（默认种子 20261014）
-cd sim && python scripts/gen_golden.py 20261014 && cd ..
+export VIVADO_BIN="D:/vivado/2025.2/Vivado/bin"   # 不在 D 盘时改路径
 
-# 2. 编译 + 仿真 + 自动 bit-exact 比对
-bash build/run_sim.sh
-# 期望：RESULT: PASS (N outputs, all bit-exact)
-
-# 3. 多随机种子回归（6 组）
+# 多随机种子回归（PW + DW 各 6 组，共 12 项）
 bash build/run_regression.sh
-# 期望：regression: 6 passed, 0 failed
+# 期望：regression: 12 passed, 0 failed
+
+# 单个模块
+bash build/run_sim.sh      # PW，配合 sim/scripts/gen_golden.py
+bash build/run_sim_dw.sh   # DW，配合 sim/scripts/gen_golden_dw.py
 ```
+
+### 生成 LED 点灯 bitstream（上板冒烟测试）
+
+```bash
+bash build/build_led.sh
+# 产出 board/led_blink/led_blink.bit
+```
+
+### 上板 / 交付
+
+- 上板步骤见 [docs/HANDOFF.md](docs/HANDOFF.md)
+- 材料清单见 [docs/MATERIALS.md](docs/MATERIALS.md)
+- 平台打通见 [docs/platform_bringup.md](docs/platform_bringup.md)
 
 ### 数据集
 
@@ -65,8 +77,10 @@ https://www.kaggle.com/c/state-farm-distracted-driver-detection
 | 模块 | 状态 | 验证方式 |
 |---|---|---|
 | `pw_conv_engine` (1×1 PW, INT8) | 6 种子 bit-exact | `sim/tb/tb_pw_conv_engine.v` |
-| `dw_conv_engine` (3×3 DW) | 开发中 | — |
-| 重排 / attention / LayerNorm | 待开发 | — |
+| `dw_conv_engine` (3×3 DW, stride1/2+pad) | 6 种子 bit-exact | `sim/tb/tb_dw_conv_engine.v` |
+| `led_blink` (平台冒烟) | bitstream 已生成，时序收敛 | `build/build_led.sh` |
+| 重排 / attention / LayerNorm | 待开发（W3） | — |
+
 
 ## 第三方组件清单
 
