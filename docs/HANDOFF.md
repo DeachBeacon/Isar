@@ -42,8 +42,3 @@ bash build/run_regression.sh
 1. **旧 2020.1 工程不要升级**，照抄参数新建 2025.2 工程
 2. 路径含空格时 `read_verilog` 用相对路径；Git Bash 调 .bat 不传 `=`
 3. 仿真配置走文件（`sim/data/params.hex`），不走命令行参数
-
-## 6. 遇到问题怎么报
-
-给我（或群里）报：现象 + 你卡在哪一步（第 2/3/4 节哪一步）+ 关键日志。
-带 `RESULT: FAIL` 的仿真输出、Vivado 的 ERROR 行、串口打印，三样至少给一样。
