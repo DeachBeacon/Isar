@@ -1,0 +1,7 @@
+xsim.dir/
+.Xil/
+*.log
+*.jou
+*.pb
+*.wdb
+*.dir/

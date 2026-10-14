@@ -4,17 +4,50 @@
 # Vivado 生成的目录
 .runs/
 .sim/
+*.runs/
+*.cache/
+*.hw/
+*.sim/
+*.ip_user_files/
+*.dcp
 
 # 比特流与报告
 *.bit
 *.bin
+board/led_blink/*.rpt
 
-# 临时仿真文件
+# 仿真产物
+sim/xsim.dir/
+sim/.Xil/
+sim/.xsim/
+sim/xvlog.log
+sim/xelab.log
+sim/xsim.log
+sim/webtalk*.jou
+sim/webtalk*.log
+sim/*.pb
+sim/data/
+
+# 日志与临时文件
+*.jou
+*.log
+*.str
 *.tmp
+
+# 大文件 / 压缩包
+*.zip
+*.tar.gz
+*.rar
+*.pdf
 
 # 未完成训练的权重文件
 *.pth
 .model_evaluation_results/
+
+# build 临时目录
+build/tmp_led/
+vivado/
+refs/
 
 # 编辑器
 .vscode/
